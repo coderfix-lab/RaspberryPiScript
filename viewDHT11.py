@@ -66,11 +66,12 @@ while True:
 
     if humidity is not None and temperature is not None:
         Temp = 'Temp={0:0.1f}*'.format(temperature)
-        Humidity = 'Humidity={1:0.1f}%'.format(humidity)
+        H = 'Humidity={0:0.1f}%'.format(humidity)
 
-    now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    now = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
     draw.text((x, top),       str(now),  font=font, fill=255)
     draw.text((x, top+8),     str(Temp), font=font, fill=255)
+    draw.text((x, top+16),     str(H), font=font, fill=255)
 
     # Display image.
     disp.image(image)
