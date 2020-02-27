@@ -65,9 +65,10 @@ while True:
     humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
     if humidity is not None and temperature is not None:
-        Temp = 'Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity)
+        Temp = 'Temp={0:0.1f}*'.format(temperature)
+        Humidity = 'Humidity={1:0.1f}%'.format(humidity)
 
-    now = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
+    now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     draw.text((x, top),       str(now),  font=font, fill=255)
     draw.text((x, top+8),     str(Temp), font=font, fill=255)
 
